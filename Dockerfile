@@ -30,6 +30,7 @@ COPY . .
 # Expose the port on which your app will run
 EXPOSE 3000
 
+CMD ["npm", "preinstall"]
 # Define the command to run your app
 CMD ["npm", "start"]
 
