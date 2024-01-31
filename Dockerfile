@@ -13,6 +13,24 @@ RUN chown -R root:root ./go
 RUN mv go /usr/local
 ENV PATH=$PATH:/usr/local/go/bin
 
-# Installing node-gyp
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install app dependencies
+RUN npm install
 RUN npm install -g node-gyp@7.1.2
 RUN node-gyp -v
+
+# Copy the application files to the working directory
+COPY . .
+
+# Expose the port on which your app will run
+EXPOSE 3000
+
+# Define the command to run your app
+CMD ["npm", "start"]
+
+# Installing node-gyp
