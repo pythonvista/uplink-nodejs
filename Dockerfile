@@ -1,7 +1,7 @@
 FROM node:14.5.0
 
 # Installing node-gyp dependencies and git
-RUN apt-get -y update
+# RUN apt-get -y update
 # RUN apt-get -y install build-essential
 # RUN apt-get install -y git
 

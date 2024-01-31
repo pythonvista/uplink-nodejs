@@ -7,7 +7,10 @@
     "test": "tsc test/testcase.ts && mocha --timeout 60000",
     "preinstall": "make",
     "install": "(node-gyp configure) && (node-gyp rebuild)",
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "start": "pm2-runtime start index.js",
+    "stop": "pm2 stop index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
