@@ -2,8 +2,8 @@ FROM node:14.5.0
 
 # Installing node-gyp dependencies and git
 RUN apt-get -y update
-RUN apt-get -y install build-essential
-RUN apt-get install -y git
+# RUN apt-get -y install build-essential
+# RUN apt-get install -y git
 
 # Installing golang
 RUN curl -O https://dl.google.com/go/go1.14.6.linux-amd64.tar.gz
